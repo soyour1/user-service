@@ -35,7 +35,7 @@ public class JwtProvider {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
         
         Date now = new Date();
-        Date expiryDate = new Date(now.getTime() + 288000000);
+        Date expiryDate = new Date(now.getTime() + 28800000);
  
         return Jwts.builder()
                     .setSubject((userPrincipal.getUsername()))
@@ -48,7 +48,7 @@ public class JwtProvider {
     }
     
     public String generateTokenFromUser(User user) {
-        Instant expiryDate = Instant.now().plusMillis(288000000);
+        Instant expiryDate = Instant.now().plusMillis(28800000);
         return Jwts.builder()
                 .setSubject(user.getEmail())
                 .setIssuer("Therapex")
@@ -104,6 +104,6 @@ public class JwtProvider {
     }
     
     public long getExpiryDuration() {
-        return 288000000;
+        return 28800000;
     }
 }
