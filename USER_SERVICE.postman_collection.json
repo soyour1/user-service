@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "c014d7fc-5a22-46cb-bf35-180458d14d63",
+		"name": "USER_SERVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ADMIN1\",\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"picture\": \"link_picture\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sigin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"deviceInfo\": {\r\n        \"deviceId\": \"00000000-54b3-e7c7-0000-000046bffd97\",\r\n        \"deviceType\": \"SAMSUNG\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAZ21haWwuY29tIiwiaXNzIjoiU3RhY2tBYnVzZSIsImp0aSI6IjEiLCJpYXQiOjE2NTgyNzIxNjksImV4cCI6MTY1ODI3NTc2OX0.8KKc_QMMEbTzfF7q-ZCVqe55FfnINH0K-Xq3nCkuV5OjIeAZkX6LF9L2PcT3swq3c5wrZn_IWg54gBthdG_HWg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAZ21haWwuY29tIiwiaXNzIjoiU3RhY2tBYnVzZSIsImp0aSI6IjEiLCJpYXQiOjE2NTgyNzA5NzYsImV4cCI6MTY1ODI3NDU3Nn0.y88gvjh38VbjrWeL2N-Xi3rY6gHMeWDbUXJljH6kwdW9IqqqIkF4a9er2IxgkdEcP_4Rdn9jcmd1xarBErRsug",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"a9bd9c11-dfb4-4991-aab6-6e58b2337c07\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjJAZ21haWwuY29tIiwiaXNzIjoiVGhlcmFwZXgiLCJqdGkiOiIyIiwiaWF0IjoxNjU4MjcxNDE0LCJleHAiOjE2NTgyNzUwMTR9.x1F25Ncdkvj1EgGWni3jgOH26LIYcZ58KA3s7xQ0tdobRyPE5T3okkixfHR_YW4SaEWsg9gbkrXFAymW_Mfoww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deviceInfo\": {\r\n        \"deviceId\": \"eee\",\r\n        \"deviceType\": \"eee\"\r\n    },\r\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjJAZ21haWwuY29tIiwiaXNzIjoiVGhlcmFwZXgiLCJqdGkiOiIyIiwiaWF0IjoxNjU4MjcxNDE0LCJleHAiOjE2NTgyNzUwMTR9.x1F25Ncdkvj1EgGWni3jgOH26LIYcZ58KA3s7xQ0tdobRyPE5T3okkixfHR_YW4SaEWsg9gbkrXFAymW_Mfoww\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
