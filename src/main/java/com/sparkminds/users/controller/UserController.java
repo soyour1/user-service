@@ -57,7 +57,7 @@ public class UserController {
         .email(userPrincipal.getEmail())
         .name(userPrincipal.getName())
         .active(userPrincipal.getActive())
-       .picture(userPrincipal.getPicture()).build();
+        .picture(userPrincipal.getPicture()).build();
     }
 
     @PutMapping("/logout")
