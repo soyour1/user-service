@@ -35,7 +35,7 @@ import com.sparkminds.users.service.UserDeviceService;
 import com.sparkminds.users.service.UserPrincipal;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
